@@ -16,10 +16,12 @@
   }
 </script>
 
-<img transition:fly="{{ y: 200, duration: 2000 }}" style="max-width: 50%;" src={peeps.random()}>
+<img  style="max-width: 50%;" src={peeps.random()}>
 
 <style>
     img{
         margin-bottom: 2rem;
+
+        max-height: 200px;
     }
 </style>
