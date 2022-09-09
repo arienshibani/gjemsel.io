@@ -14,13 +14,13 @@
   let gameState = "intro"
 
   const loadingScreenTips = [
-    "husk å lete under pulter og bord!",
-    "kanskje er det noen i systemhimlingen..",
-    "sjekk søppelspannet.",
-    "det er juks å låse seg inn på doen.",
-    "gjem deg på samme rom som lete-personen nettop har vært innom",
-    "finner du ikke all før tiden er ute så taper du 😬",
-    "sjekk om noen har fått plass i kjøleskapet"
+    "Husk å lete under pulter og bord!",
+    "Kanskje er det noen i systemhimlingen..",
+    "Sjekk søppelspannet.",
+    "Det er juks å låse seg inn på doen.",
+    "Gjem deg på samme rom som lete-personen nettop har vært innom",
+    "Finner du ikke all før tiden er ute så taper du 😬",
+    "Sjekk om noen har fått plass i kjøleskapet"
   ]
 
   function startCounting() {
@@ -101,7 +101,7 @@
   <RandomPeep />
   <p>
     <b>
-      tips:
+      Tips:
     </b>
     {loadingScreenTips[Math.floor(Math.random()*loadingScreenTips.length)]}
   </p>
