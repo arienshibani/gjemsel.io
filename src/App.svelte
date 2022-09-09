@@ -56,6 +56,10 @@
 
 </script>
 
+<svelte:head>
+  <title>Gjemsel.io</title>
+</svelte:head>
+
 <main>
   <h1>Gjemsel.io</h1>
 
