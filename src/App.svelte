@@ -18,7 +18,7 @@
     "Kanskje er det noen i systemhimlingen..",
     "Sjekk søppelspannet.",
     "Det er juks å låse seg inn på doen.",
-    "Gjem deg på samme rom som lete-personen nettop har vært innom",
+    "Gjem deg på samme rom som lete-personen nettopp har vært innom",
     "Finner du ikke all før tiden er ute så taper du 😬",
     "Sjekk om noen har fått plass i kjøleskapet"
   ]
