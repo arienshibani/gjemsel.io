@@ -6,7 +6,7 @@
   import CountDown from "./lib/CountDown.svelte"
   import { fly } from "svelte/transition"
 
-  let inputFreezeTime = 50
+  let inputFreezeTime = 100
   let inputRoundDuration = 60 * 10
 
   let freezeTime = 0
@@ -16,9 +16,11 @@
   const loadingScreenTips = [
     "husk å lete under pulter og bord!",
     "kanskje er det noen i systemhimlingen..",
-    "kan noen ha gjemt seg i søppelspannet?",
+    "sjekk søppelspannet.",
+    "det er juks å låse seg inn på doen.",
     "gjem deg på samme rom som lete-personen nettop har vært innom",
-    "finner du ikke all før tiden er ute så taper du 😬"
+    "finner du ikke all før tiden er ute så taper du 😬",
+    "sjekk om noen har fått plass i kjøleskapet"
   ]
 
   function startCounting() {
@@ -62,9 +64,7 @@
     {#if gameState === "intro"}
     <hr>
     <p>
-      Gjemsel er en lek som består i at alle gjemmer seg, unntatt én deltager, som skal finne de andre. Vanligvis skal
-      én person blir valgt til å stå, mens de andre løper og gjemmer seg. Den som står, lukker øynene og teller til et
-      avtalt tall, før øynene åpnes og letingen tar til.
+      Gjemsel er en lek som består i at alle gjemmer seg, <b>unntatt én deltager</b>, som skal finne alle andre. Den som står, lukker øynene og teller til {inputFreezeTime}, før øynene åpnes og letingen begynner. Finner ikke vedkommende alle som har gjemt seg før tiden renner ut, så taper den som leter.
     </p>
 
     <div class="settings">
@@ -103,7 +103,7 @@
     <b>
       tips:
     </b>
-    {loadingScreenTips[2]}
+    {loadingScreenTips[Math.floor(Math.random()*loadingScreenTips.length)]}
   </p>
   {/if}
 
@@ -121,7 +121,7 @@
     {#if gameState === "counting"}
     <button> Gjem dere! </button>
     {:else if gameState === "Done"}
-    <button >Ny runde?</button>
+    <button on:click="{window.location.reload()}">Ny runde?</button>
     {/if}
   </div>
 </main>
