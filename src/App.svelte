@@ -43,7 +43,7 @@
   function setFreezeTime() {
     startCounting()
     setRoundDuration()
-    freezeTime += inputFreezeTime;
+    freezeTime = inputFreezeTime;
 
     delay(1000 * freezeTime).then(() => {
       startManhunt()
@@ -51,7 +51,13 @@
   }
 
   function setRoundDuration() {
-    roundDuration += inputRoundDuration;
+    roundDuration = inputRoundDuration;
+  }
+
+  function resetGame() {
+    gameState = "intro";
+    freezeTime = 0;
+    roundDuration = 0;
   }
 
 </script>
@@ -110,7 +116,7 @@
     {loadingScreenTips[Math.floor(Math.random()*loadingScreenTips.length)]}
   </p>
 
-  <button on:click={() => gameState = "intro"}>Tilbake</button>
+  <button on:click={resetGame}>Tilbake</button>
 
   {/if}
 
@@ -122,7 +128,7 @@
   <CountDown countdown="{roundDuration}" prefixText="Finn alle før tiden renner ut! "
     timerFinishedText="Runden er over! Fant du alle sammen?" />
 
-  <button on:click={() => gameState = "intro"}>Tilbake</button>
+  <button on:click={resetGame}>Tilbake</button>
   {/if}
 
   <div class="card" transition:fly="{{ y: 200, duration: 1000 }}">
