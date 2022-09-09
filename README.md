@@ -1,6 +1,6 @@
 # Gjemsel.io
 
-Gjemsel er en lek som består i at alle gjemmer seg, unntatt én deltager, som skal finne alle andre. Den som står, lukker øynene og teller til 60, før øynene åpnes og letingen begynner. Finner ikke vedkommende alle som har gjemt seg før tiden renner ut, så taper den som leter.
+Gjemsel er en lek som består i at alle gjemmer seg, unntatt én deltager, som skal finne alle andre!
 
 ## Slik kjører du koden lokalt
 
