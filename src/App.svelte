@@ -109,6 +109,9 @@
     </b>
     {loadingScreenTips[Math.floor(Math.random()*loadingScreenTips.length)]}
   </p>
+
+  <button on:click={() => gameState = "intro"}>Tilbake</button>
+
   {/if}
 
 
@@ -118,6 +121,8 @@
   <RandomStandingPeep />
   <CountDown countdown="{roundDuration}" prefixText="Finn alle før tiden renner ut! "
     timerFinishedText="Runden er over! Fant du alle sammen?" />
+
+  <button on:click={() => gameState = "intro"}>Tilbake</button>
   {/if}
 
   <div class="card" transition:fly="{{ y: 200, duration: 1000 }}">
