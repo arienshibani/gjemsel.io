@@ -1,10 +1,11 @@
 <script>
-  import svelteLogo from './assets/svelte.svg'
   import StartButton from './lib/StartButton.svelte'
-  import RandomPeep from "./lib/RandomPeep.svelte"
-  import RandomStandingPeep from "./lib/RandomStandingPeep.svelte"
   import CountDown from "./lib/CountDown.svelte"
   import { fly } from "svelte/transition"
+
+  // Art by Pablo Stanley: https://www.openpeeps.com/
+  import RandomPeep from "./lib/RandomPeep.svelte"
+  import RandomStandingPeep from "./lib/RandomStandingPeep.svelte"
 
   let inputFreezeTime = 100
   let inputRoundDuration = 60 * 10
@@ -57,7 +58,7 @@
 </script>
 
 <main>
-  <h1>Gjemsel.io</h1>
+  <h1>Gjemsel</h1>
 
 
   <div transition:fly="{{ y: 200, duration: 1000 }}">
@@ -66,6 +67,10 @@
     <p>
       Gjemsel er en lek som består i at alle gjemmer seg, <b>unntatt én deltager</b>, som skal finne alle andre. Den som står, lukker øynene og teller til {inputFreezeTime}, før øynene åpnes og letingen begynner. Finner ikke vedkommende alle som har gjemt seg før tiden renner ut, så taper den som leter.
     </p>
+
+    <p></p>
+
+
 
     <div class="settings">
       <h2>Innstillinger ⚙️</h2>
