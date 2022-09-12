@@ -1,4 +1,5 @@
 <script>
+  import favicon from './assets/favicon.ico'
   import StartButton from './lib/StartButton.svelte'
   import CountDown from "./lib/CountDown.svelte"
   import { fly } from "svelte/transition"
@@ -65,6 +66,7 @@
 
 <svelte:head>
   <title>Gjemsel.io</title>
+  <link rel="icon" type="image/ico" href={favicon} />
 </svelte:head>
 
 <main>
