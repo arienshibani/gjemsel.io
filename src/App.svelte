@@ -20,7 +20,7 @@
     "Sjekk søppelspannet.",
     "Det er juks å låse seg inn på doen.",
     "Gjem deg på samme rom som lete-personen nettopp har vært innom",
-    "Finner du ikke all før tiden er ute så taper du 😬",
+    "Finner du ikke all før tiden er ute så taper du",
     "Sjekk om noen har fått plass i kjøleskapet"
   ]
 
@@ -103,6 +103,13 @@
       <button on:click={setFreezeTime}>Begynn Leken 🏃</button>
       {/if}
 
+      {#if gameState === "intro"}
+      <br>
+      <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+      <label for="vehicle1"> Lyd På 🎵</label><br>
+      {/if}
+
+
       <br>
       <br>
       <RandomPeep />
@@ -121,7 +128,7 @@
     {loadingScreenTips[Math.floor(Math.random()*loadingScreenTips.length)]}
   </p>
 
-  <button on:click={resetGame}>Tilbake</button>
+  <button on:click={resetGame}>Avbryt Nedtelling 🙅‍♂️</button>
 
   {/if}
 
@@ -133,7 +140,7 @@
   <CountDown countdown="{roundDuration}" prefixText="Finn alle før tiden renner ut! "
     timerFinishedText="Runden er over! Fant du alle sammen?" />
 
-  <button on:click={resetGame}>Tilbake</button>
+  <button on:click={resetGame}>Avbryt Runden 🙅‍♂️</button>
   {/if}
 
   <div class="card" transition:fly="{{ y: 200, duration: 1000 }}">
@@ -141,7 +148,7 @@
     {#if gameState === "counting"}
     <button> Gjem dere! </button>
     {:else if gameState === "Done"}
-    <button on:click="{window.location.reload()}">Ny runde?</button>
+    <button on:click="{window.location.reload()}">Ny runde? 🏃</button>
     {/if}
   </div>
 </main>
