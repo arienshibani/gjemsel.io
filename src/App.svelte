@@ -130,7 +130,7 @@
   </p>
 
   <button on:click={resetGame}>Avbryt Nedtelling 🙅‍♂️</button>
-  <AudioPlayer src="{countDownMusic}" />
+  <AudioPlayer src="https://github.com/arienshibani/gjemsel.io/blob/master/src/assets/huddle.mp3" />
   {/if}
 
 
@@ -138,7 +138,7 @@
   <p>Klar eller ei, her kommer jeg!</p>
   <br>
   <RandomStandingPeep />
-  <AudioPlayer src="{roundStartSound}" showCheckBox={false}/>
+  <AudioPlayer src="https://github.com/arienshibani/gjemsel.io/blob/master/src/assets/sus.mp3" showCheckBox={false}/>
   
   <CountDown countdown="{roundDuration}" prefixText="Finn alle før tiden renner ut! "
     timerFinishedText="Runden er over! Fant du alle sammen?" />
