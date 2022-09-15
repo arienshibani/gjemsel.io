@@ -2,6 +2,7 @@
   import favicon from './assets/favicon.ico'
   import StartButton from './lib/StartButton.svelte'
   import CountDown from "./lib/CountDown.svelte"
+  import AudioPlayer, {playMusic, stopMusic} from "../src/lib/AudioPlayer.svelte"
   import { fly } from "svelte/transition"
 
   // Art by Pablo Stanley: https://www.openpeeps.com/
@@ -15,6 +16,9 @@
   let roundDuration = 0
   let gameState = "intro"
 
+  let countDownMusic = "../src/assets/huddle.mp3"
+  let roundStartSound = "../src/assets/sus.mp3"
+
   const loadingScreenTips = [
     "Husk å lete under pulter og bord!",
     "Kanskje er det noen i systemhimlingen..",
@@ -26,6 +30,7 @@
   ]
 
   function startCounting() {
+    playMusic()
     gameState = "countDownStage"
   }
 
@@ -38,6 +43,7 @@
   }
 
   function startManhunt() {
+    stopMusic()
     gameState = "manhunt"
     delay(1000 * roundDuration).then(() => gameFinished())
   }
@@ -46,7 +52,7 @@
     startCounting()
     setRoundDuration()
     freezeTime = inputFreezeTime;
-
+ 
     delay(1000 * freezeTime).then(() => {
       startManhunt()
     })
@@ -57,6 +63,7 @@
   }
 
   function resetGame() {
+    stopMusic()
     gameState = "intro";
     freezeTime = 0;
     roundDuration = 0;
@@ -72,7 +79,6 @@
 <main>
   <h1>Gjemsel</h1>
 
-
   <div transition:fly="{{ y: 200, duration: 1000 }}">
     {#if gameState === "intro"}
     <hr>
@@ -82,7 +88,7 @@
 
     <p></p>
 
-
+ 
 
     <div class="settings">
       <h2>Innstillinger ⚙️</h2>
@@ -105,13 +111,6 @@
       <button on:click={setFreezeTime}>Begynn Leken 🏃</button>
       {/if}
 
-      {#if gameState === "intro"}
-      <br>
-      <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
-      <label for="vehicle1"> Lyd På 🎵</label><br>
-      {/if}
-
-
       <br>
       <br>
       <RandomPeep />
@@ -131,7 +130,7 @@
   </p>
 
   <button on:click={resetGame}>Avbryt Nedtelling 🙅‍♂️</button>
-
+  <AudioPlayer src="{countDownMusic}" />
   {/if}
 
 
@@ -139,14 +138,15 @@
   <p>Klar eller ei, her kommer jeg!</p>
   <br>
   <RandomStandingPeep />
+  <AudioPlayer src="{roundStartSound}" showCheckBox={false}/>
+  
   <CountDown countdown="{roundDuration}" prefixText="Finn alle før tiden renner ut! "
     timerFinishedText="Runden er over! Fant du alle sammen?" />
 
-  <button on:click={resetGame}>Avbryt Runden 🙅‍♂️</button>
+  <button on:click={resetGame}>Tilbake 🏃</button>
   {/if}
 
   <div class="card" transition:fly="{{ y: 200, duration: 1000 }}">
-
     {#if gameState === "counting"}
     <button> Gjem dere! </button>
     {:else if gameState === "Done"}
