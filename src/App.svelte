@@ -24,9 +24,11 @@
     "Kanskje er det noen i systemhimlingen..",
     "Sjekk søppelspannet.",
     "Det er juks å låse seg inn på doen.",
-    "Gjem deg på samme rom som lete-personen nettopp har vært innom",
-    "Finner du ikke all før tiden er ute så taper du",
-    "Sjekk om noen har fått plass i kjøleskapet"
+    "Set telefonen på flymodus!",
+    "Finner du ikke alle før tiden er ute så taper du",
+    "Sjekk om noen har fått plass i kjøleskapet",
+    "Man is not what he thinks he is, he is what he hides",
+    "It is a joy to be hidden, and a disaster not to be found.",
   ]
 
   function startCounting() {
@@ -96,7 +98,7 @@
       <br>
       <label>
         <b>Telleperiode 🙈 {inputFreezeTime} sekunder</b> <br>
-        Antall sekunder man skal telle før leting
+        Antall sekunder man skal telle
         <input type=range bind:value={inputFreezeTime} step=5 min=30 max=100> <br>
       </label>
 
@@ -129,8 +131,8 @@
     {loadingScreenTips[Math.floor(Math.random()*loadingScreenTips.length)]}
   </p>
 
-  <button on:click={resetGame}>Avbryt Nedtelling 🙅‍♂️</button>
-  <AudioPlayer src="{countDownMusicSrc}" />
+  <button on:click={resetGame}>Avbryt Nedtelling</button>
+  <AudioPlayer src="{countDownMusicSrc}" showCheckBox={true}/>
   {/if}
 
 
@@ -143,14 +145,14 @@
   <CountDown countdown="{roundDuration}" prefixText="Finn alle før tiden renner ut! "
     timerFinishedText="Runden er over! Fant du alle sammen?" />
 
-  <button on:click={resetGame}>Tilbake 🏃</button>
+  <button on:click={resetGame}>Tilbake</button>
   {/if}
 
   <div class="card" transition:fly="{{ y: 200, duration: 1000 }}">
     {#if gameState === "counting"}
     <button> Gjem dere! </button>
     {:else if gameState === "Done"}
-    <button on:click="{window.location.reload()}">Ny runde? 🏃</button>
+    <button on:click="{window.location.reload()}">Ny runde?</button>
     {/if}
   </div>
 </main>
