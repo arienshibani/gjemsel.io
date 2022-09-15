@@ -45,6 +45,7 @@
   <main>
     <div>
       <audio 
+          crossorigin="anonymous"
           autoplay
           bind:this={player}
           {src}
