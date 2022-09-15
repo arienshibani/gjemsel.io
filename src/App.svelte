@@ -16,8 +16,8 @@
   let roundDuration = 0
   let gameState = "intro"
 
-  let countDownMusic = "../src/assets/huddle.mp3"
-  let roundStartSound = "../src/assets/sus.mp3"
+  let countDownMusic = "https://github.com/arienshibani/gjemsel.io/raw/master/src/assets/huddle.mp3"
+  let roundStartSound = "https://github.com/arienshibani/gjemsel.io/raw/master/src/assets/sus.mp3"
 
   const loadingScreenTips = [
     "Husk å lete under pulter og bord!",
@@ -130,7 +130,7 @@
   </p>
 
   <button on:click={resetGame}>Avbryt Nedtelling 🙅‍♂️</button>
-  <AudioPlayer src="https://github.com/arienshibani/gjemsel.io/blob/master/src/assets/huddle.mp3" />
+  <AudioPlayer src="{countDownMusic}" />
   {/if}
 
 
@@ -138,7 +138,7 @@
   <p>Klar eller ei, her kommer jeg!</p>
   <br>
   <RandomStandingPeep />
-  <AudioPlayer src="https://github.com/arienshibani/gjemsel.io/blob/master/src/assets/sus.mp3" showCheckBox={false}/>
+  <AudioPlayer src="{roundStartSound}" showCheckBox={false}/>
   
   <CountDown countdown="{roundDuration}" prefixText="Finn alle før tiden renner ut! "
     timerFinishedText="Runden er over! Fant du alle sammen?" />
