@@ -16,8 +16,8 @@
   let roundDuration = 0
   let gameState = "intro"
 
-  let countDownMusicSrc = "https://github.com/arienshibani/gjemsel.io/raw/master/src/assets/huddle.mp3"
-  let roundStartSoundSrc = "https://github.com/arienshibani/gjemsel.io/raw/master/src/assets/sus.mp3"
+  import countDownMusicSrc from "./assets/huddle.mp3"
+  import roundStartSoundSrc from "./assets/sus.mp3"
 
   const loadingScreenTips = [
     "Husk å lete under pulter og bord!",
