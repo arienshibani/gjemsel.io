@@ -1,6 +1,6 @@
 # Gjemsel.io
 
-Gjemsel er en lek som består i at alle gjemmer seg, unntatt én deltager, som skal finne alle andre!
+Gjemsel er en lek som består i at alle gjemmer seg, unntatt én deltager, som skal finne alle andre.
 
 ## Slik kjører du koden lokalt
 
