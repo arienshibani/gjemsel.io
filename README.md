@@ -10,6 +10,6 @@ npm run dev
 ```
 
 ## Demo
-https://kontor-gjemsel.surge.sh/
+https://gjemsel.io/
 
 ![image](https://user-images.githubusercontent.com/22197324/189322410-0ee55c30-f718-4b14-be59-1d335210928d.png)
